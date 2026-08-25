@@ -1,0 +1,6 @@
+{
+  "name": "Quantum AI Web 4.0 Launchpad & Optimizer",
+  "description": "Next-gen Web 4.0 ecosystem with Quantum Portfolio Optimizer (QUBO/QAOA), Dual Web3 Connect (BNB & Solana), AI Agentics Token Launchpad, Conway Quantum Automaton, Multi-Model AI Assistant, and PQC Suite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
