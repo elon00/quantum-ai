@@ -1,7 +1,10 @@
-export type SupportedChain = 'bnb' | 'solana';
+export type SupportedChain = 'bnb' | 'solana' | 'sui' | 'ethereum' | 'arbitrum';
 
 export type NavigationTab =
   | 'optimizer'
+  | 'backtester'
+  | 'quantum-cloud'
+  | 'bridge'
   | 'launchpad'
   | 'automaton'
   | 'tokenomics'
@@ -13,7 +16,7 @@ export type NavigationTab =
 export interface WalletAccount {
   address: string;
   chain: SupportedChain;
-  balance: number; // in BNB or SOL
+  balance: number; // in native coin
   qaiBalance: number; // in QAI tokens
   connected: boolean;
   networkName: string;
@@ -31,7 +34,7 @@ export interface DualWalletState {
 export interface TransactionRecord {
   id: string;
   hash: string;
-  type: 'faucet' | 'deploy' | 'swap' | 'stake' | 'burn' | 'optimize' | 'pqc_verify';
+  type: 'faucet' | 'deploy' | 'swap' | 'stake' | 'burn' | 'optimize' | 'pqc_verify' | 'bridge';
   chain: SupportedChain;
   amount?: string;
   timestamp: number;
@@ -56,16 +59,49 @@ export interface PortfolioAsset {
 }
 
 export interface OptimizationResult {
-  solver: 'QAOA' | 'QUBO_Annealing' | 'Classical_Markowitz' | 'Monte_Carlo';
+  solver: 'QAOA' | 'VQE' | 'QUBO_Annealing' | 'Classical_Markowitz' | 'AI_AutoPilot' | 'Monte_Carlo';
   expectedReturn: number;
   expectedVolatility: number;
   sharpeRatio: number;
   quantumSpeedup: string;
   energyEigenvalue: number;
   pqcResilienceScore: number;
-  allocations: { symbol: string; weight: number; color: string }[];
+  allocations: { symbol: string; weight: number; color?: string }[];
   frontierPoints: { vol: number; ret: number; isOptimal?: boolean; isQuantum?: boolean }[];
   eigenstates: { state: string; probability: number; energy: number }[];
+}
+
+export interface BacktestYearMetrics {
+  year: number;
+  classicalReturn: number;
+  qaoaReturn: number;
+  pqcHardenedReturn: number;
+  classicalMdd: number;
+  qaoaMdd: number;
+  qDaySurvivabilityScore: number;
+}
+
+export interface QuantumHardwareBackend {
+  id: string;
+  name: string;
+  provider: 'IBM Quantum' | 'D-Wave Systems' | 'Rigetti Computing' | 'IonQ' | 'Local Simulator';
+  qubits: number;
+  technology: 'Superconducting Transmon' | 'Quantum Annealer' | 'Trapped Ion' | 'Statevector Sim';
+  status: 'online' | 'busy' | 'calibrating';
+  avgQueueTimeMin: number;
+  fidelity2Qubit: number;
+  coherenceT1Us: number;
+}
+
+export interface CrossChainBridgeTransfer {
+  id: string;
+  fromChain: SupportedChain;
+  toChain: SupportedChain;
+  amount: number;
+  tokenSymbol: string;
+  pqcProofHash: string;
+  status: 'locking' | 'relaying' | 'minting' | 'completed';
+  timestamp: number;
 }
 
 export type BondingCurveType = 'Linear' | 'Exponential' | 'QuantumSigmoid';
@@ -84,8 +120,8 @@ export interface AgentToken {
   change24h: number;
   marketCap: number;
   raised: number;
-  targetRaise: number; // e.g. 85 BNB or 500 SOL
-  graduationProgress: number; // 0 - 100%
+  targetRaise: number;
+  graduationProgress: number;
   holders: number;
   transactions: number;
   volume24h: number;
@@ -112,6 +148,8 @@ export interface ChatMessage {
   content: string;
   timestamp: string;
   toolInvoked?: string;
+  toolResult?: any;
+  latexFormulas?: string[];
   isSimulated?: boolean;
 }
 
