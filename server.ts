@@ -93,13 +93,13 @@ async function startServer() {
       if (!ai) {
         return res.json({
           auditReport: {
-            score: 98,
-            status: "Passed - Post-Quantum Hardened",
+            score: null,
+            status: "SIMULATION / REVIEW REQUIRED — Gemini audit unavailable",
             findings: [
               { severity: "Low", title: "Integer Precision in Sigmoid Math", recommendation: "Utilize 18-decimal fixed point scaling (WAD) for quantum penalty calculations." },
               { severity: "Info", title: "PQC Signature Verification", recommendation: "Compatible with ML-DSA-65 pre-compiled verification contracts." }
             ],
-            quantumVulnerabilityScore: "0.02% (Shor 2048Q Resistant)"
+            quantumVulnerabilityScore: "NOT VERIFIED — no cryptographic proof was executed"
           }
         });
       }
@@ -117,8 +117,8 @@ async function startServer() {
 
       res.json({
         auditText: response.text,
-        score: 96,
-        status: "Passed Security Checks",
+        score: null,
+        status: "AI analysis only — independent security verification required",
       });
     } catch (error: any) {
       res.status(500).json({ error: error.message });
