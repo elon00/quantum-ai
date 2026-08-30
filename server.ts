@@ -32,9 +32,10 @@ async function startServer() {
     res.json({
       status: "ok",
       timestamp: new Date().toISOString(),
-      quantumMeshNodes: 48,
-      tps: 3140,
-      pqcMode: "ML-KEM-768/ML-DSA-65",
+      quantumMeshNodes: null,
+      tps: null,
+      pqcMode: "NOT CRYPTOGRAPHICALLY VERIFIED",
+      statusNote: "Health endpoint does not certify live mesh capacity, TPS, or PQC implementation.",
     });
   });
 
@@ -45,12 +46,12 @@ async function startServer() {
 
       const ai = getGenAI();
       if (!ai) {
-        // Fallback intelligent simulation if no API key configured yet
+        // Explicit demo fallback: no external AI model or quantum computation is executed.
         return res.json({
           text: `[Quantum Simulation Mode - ${model}]\n\nBased on your query: "${message}"\n\n` +
-            `• **Analysis**: Evaluated across 127-qubit quantum state space.\n` +
-            `• **Recommendation**: The optimal QUBO parameter $\\theta = 0.42$ yields a Sharpe ratio of 2.84 with 99.4% PQC resilience.\n` +
-            `• **Security Audit**: No reentrancy risks detected. ML-KEM-768 key encapsulation active.`,
+            `• **Status**: Demonstration response only; no quantum hardware or 127-qubit computation was executed.\n` +
+            `• **Recommendation**: Run the portfolio optimizer and cryptographic tests before relying on any parameter.\n` +
+            `• **Security**: No smart-contract or ML-KEM verification was performed in this fallback mode.`,
           simulated: true,
         });
       }
