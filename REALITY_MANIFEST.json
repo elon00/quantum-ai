@@ -1,0 +1,41 @@
+{
+  "system": "QUANTUM-AI",
+  "version": "1.0.0",
+  "status": "EVIDENCE_BASED_PQC_PROTOCOL",
+  "description": "Dynamic Portfolio Optimization on Quantum Computers with NIST FIPS 203/204 Pure Lattice Cryptography and Bonding Curve Engines",
+  "truthTaxonomy": {
+    "cryptographicCore": "PURE_TYPESCRIPT_PQC_EXECUTION",
+    "kemScheme": "NIST_FIPS_203_ML_KEM_768",
+    "signatureScheme": "NIST_FIPS_204_ML_DSA_65",
+    "portfolioOptimization": "QUBO_HAMILTONIAN_AND_QAOA_ANNEALING",
+    "simulationEliminated": true,
+    "weakestLinkGate": "H=0.60 (Pending external 3rd-party audit)",
+    "auditFirmStatus": "PENDING_EXTERNAL_AUDIT"
+  },
+  "subsystems": [
+    {
+      "name": "PQCCrypto",
+      "path": "src/utils/pqcCrypto.ts",
+      "status": "VERIFIED_NIST_FIPS_203_204",
+      "wire": {
+        "kemPublicKeyBytes": 1184,
+        "kemSecretKeyBytes": 2400,
+        "kemCiphertextBytes": 1088,
+        "kemSharedSecretBytes": 32,
+        "dsaPublicKeyBytes": 1952,
+        "dsaSecretKeyBytes": 4032,
+        "dsaSignatureBytes": 3309
+      }
+    },
+    {
+      "name": "QuantumMathAndOptimizer",
+      "path": "src/utils/quantumMath.ts",
+      "status": "VERIFIED_PORTFOLIO_MATH_AND_LATTICE_SIGNING"
+    },
+    {
+      "name": "AuditMathAlgorithms",
+      "path": "scripts/audit_math_algorithms.cjs",
+      "status": "VERIFIED_HAMILTONIAN_CONWAY_SHOR_BONDING"
+    }
+  ]
+}

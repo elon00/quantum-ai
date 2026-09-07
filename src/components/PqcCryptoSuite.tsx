@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Key, Lock, Unlock, Zap, Clock, Download, CheckCircle2, RefreshCw, Cpu, AlertTriangle } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { generatePqcKeyPair, encapsulateKEM, decapsulateKEM } from '../utils/pqcCrypto';
 
 export const PqcCryptoSuite: React.FC = () => {
   const [selectedAlgo, setSelectedAlgo] = useState<'ML-KEM-768' | 'ML-KEM-1024' | 'ML-DSA-65'>('ML-KEM-768');
@@ -18,15 +19,15 @@ export const PqcCryptoSuite: React.FC = () => {
 
   const handleGenerateKeypair = async () => {
     setIsGenerating(true);
-    await new Promise((r) => setTimeout(r, 900));
+    await new Promise((r) => setTimeout(r, 100));
 
-    const genHex = (len: number) =>
-      '0x' + Array.from({ length: len }, () => Math.floor(Math.random() * 16).toString(16)).join('');
+    const kemPair = generatePqcKeyPair('ML-KEM-768');
+    const enc = encapsulateKEM(kemPair.publicKey);
 
-    setPublicKey(genHex(32) + '... (Lattice Ring Z_q[X]/(X^256 + 1))');
-    setSecretKey(genHex(32) + '... (Secret Ring Poly s_hat)');
-    setCiphertext(genHex(48) + '... (Encapsulated Ciphertext c)');
-    setSharedSecret(genHex(16) + ' (Derived 256-bit Post-Quantum Secret K)');
+    setPublicKey('0x' + kemPair.publicKey.slice(0, 32) + '... (Lattice Ring Z_q[X]/(X^256 + 1))');
+    setSecretKey(kemPair.privateKeyPreview);
+    setCiphertext('0x' + enc.ciphertextHex.slice(0, 48) + '... (Encapsulated Ciphertext c)');
+    setSharedSecret('0x' + enc.sharedSecretHex.slice(0, 32) + ' (Derived 256-bit Post-Quantum Secret K)');
 
     confetti({
       particleCount: 60,

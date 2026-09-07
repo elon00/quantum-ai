@@ -373,7 +373,9 @@ export function solveQuantumPortfolio(
   };
 }
 
-// NIST FIPS 204 (ML-DSA-65) Mock Signer for Frontend Orders
+// NIST FIPS 204 (ML-DSA-65) Genuine Pure-TS Lattice Signer for Portfolio Orders
+import { generatePqcKeyPair, signPqcMessage, verifyPqcMessage } from './pqcCrypto';
+
 export function signPortfolioOrderPqc(allocation: { symbol: string; weight: number }[], theta: number, solver: string) {
   const payload = {
     allocations: allocation,
@@ -384,14 +386,15 @@ export function signPortfolioOrderPqc(allocation: { symbol: string; weight: numb
     kem_standard: 'NIST FIPS 203 (ML-KEM-768)'
   };
   const serialized = JSON.stringify(payload);
-  const mockSig = 'mldsa65:' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
-  const publicKey = '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
+  const pair = generatePqcKeyPair('ML-DSA-65');
+  const sigResult = signPqcMessage(pair.keyId, serialized);
+  const isValid = verifyPqcMessage(sigResult.signature, serialized, pair.publicKey);
 
   return {
     payload,
-    signature: mockSig,
-    publicKey,
-    verified: true
+    signature: sigResult.signature,
+    publicKey: '0x' + pair.publicKey,
+    verified: isValid
   };
 }
 
