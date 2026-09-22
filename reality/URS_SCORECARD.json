@@ -1,6 +1,6 @@
 {
   "system": "QUANTUM-AI",
-  "timestamp": "2026-09-07T16:09:20.320Z",
+  "timestamp": "2026-09-22T02:45:57.263Z",
   "gatesPassed": 10,
   "totalGates": 10,
   "score": 10,
@@ -42,10 +42,10 @@
     },
     {
       "gate": 6,
-      "name": "Quantum AI Conjunction & Fail-Closed Defense",
+      "name": "Signature-Boundary Fail-Closed Defense",
       "passed": true,
       "score": 1,
-      "details": "Dual Hybrid Conjunction holds; unauthenticated attempts fail-closed"
+      "details": "ML-DSA proof is verified; hybrid payment and Ed25519 claims are explicitly unavailable"
     },
     {
       "gate": 7,

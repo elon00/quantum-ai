@@ -144,7 +144,7 @@ try {
   assert.strictEqual(verifyPqcSignature(sig.hybridSignature, 'TX_URS_GATE_005', keyPair.publicKey, 0.005, 'srv-quantum-ai').valid, true);
 
   // Bit flip tampering rejection
-  const badSig = sig.hybridSignature.replace('PQC-HYBRID-x402.', 'CORRUPTED.');
+  const badSig = sig.hybridSignature.replace('ML-DSA-65.', 'CORRUPTED.');
   assert.strictEqual(verifyPqcSignature(badSig, 'TX_URS_GATE_005', keyPair.publicKey, 0.005, 'srv-quantum-ai').valid, false);
 
   gates.push({
@@ -162,25 +162,30 @@ try {
 }
 
 // -----------------------------------------------------------------------------
-// GATE 6: Quantum AI Conjunction & Fail-Closed Defense
+// GATE 6: Signature-Boundary Fail-Closed Defense
 // -----------------------------------------------------------------------------
 try {
   const keyPair = generatePqcKeyPair('ML-DSA-65');
   const sig = createPqcHybridSignature('RQSQ6LBTNQEGROLRSKRCJPLVLUD6JOGAVY3QUTDDYGYBBHGAKDSA', keyPair, 0.005, 'srv-quantum-ai');
-  assert.strictEqual(sig.quantumResistanceScore, 1.0);
-  assert.ok(sig.verificationProof.includes('NIST_FIPS_204_ML_DSA_65_AUTHENTICATED'));
+  assert.strictEqual(sig.quantumResistanceScore, 0);
+  assert.strictEqual(sig.ed25519Component, 'NOT_IMPLEMENTED');
+  assert.ok(sig.verificationProof.includes('ML_DSA_65_SIGNATURE'));
+  assert.strictEqual(
+    verifyPqcSignature(`${sig.hybridSignature.slice(0, -2)}00`, 'RQSQ6LBTNQEGROLRSKRCJPLVLUD6JOGAVY3QUTDDYGYBBHGAKDSA', keyPair.publicKey, 0.005, 'srv-quantum-ai').valid,
+    false
+  );
 
   gates.push({
     gate: 6,
-    name: 'Quantum AI Conjunction & Fail-Closed Defense',
+    name: 'Signature-Boundary Fail-Closed Defense',
     passed: true,
     score: 1.0,
-    details: 'Dual Hybrid Conjunction holds; unauthenticated attempts fail-closed'
+    details: 'ML-DSA proof is verified; hybrid payment and Ed25519 claims are explicitly unavailable'
   });
-  console.log('▶ [URS GATE 6/10] Quantum AI Conjunction & Fail-Closed Defense');
-  console.log('  ✅ Dual Hybrid Conjunction holds; unauthenticated attempts fail-closed\n');
+  console.log('▶ [URS GATE 6/10] Signature-Boundary Fail-Closed Defense');
+  console.log('  ✅ ML-DSA proof verified; unavailable hybrid components are not claimed\n');
 } catch (e: any) {
-  gates.push({ gate: 6, name: 'Quantum AI Conjunction & Fail-Closed Defense', passed: false, score: 0.0, details: e.message });
+  gates.push({ gate: 6, name: 'Signature-Boundary Fail-Closed Defense', passed: false, score: 0.0, details: e.message });
   console.log(`  ❌ GATE 6 FAILED: ${e.message}\n`);
 }
 

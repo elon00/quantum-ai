@@ -7,7 +7,13 @@
 [![React 19](https://img.shields.io/badge/React-19.0-blue.svg)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-6.0-purple.svg)](https://vitejs.dev)
 
-A unified **Web 4.0 platform** integrating **Post-Quantum Cryptography (PQC)**, **Quantum Portfolio Optimization (QUBO & QAOA)**, **Conway Quantum Automaton**, **Unlimited Elastic Strategic Supply Tokenomics**, and a **Dual-Chain AI Agent Token Launchpad** across **BNB Smart Chain** and **Solana**.
+A research and prototype Web 4.0 interface exploring **Post-Quantum Cryptography (PQC)**, **Quantum Portfolio Optimization (QUBO & QAOA)**, **Conway Quantum Automaton**, tokenomics models, and a multi-chain launchpad user interface.
+
+## Current status and safety boundary
+
+This repository is a prototype, not a deployed token platform or financial product. Local automated checks cover the mathematical model, ML-KEM/ML-DSA primitives, application signature handling, and build output. They do not prove live-chain settlement, wallet authorization, price accuracy, model-provider availability, token issuance, testnet deployment, or production readiness.
+
+The app verifies ML-DSA-65 signatures for its own payload format. It does **not** implement Ed25519 hybrid signatures, payment verification, or on-chain authorization. Those functions remain unavailable rather than being represented as verified.
 
 ---
 
@@ -16,13 +22,13 @@ A unified **Web 4.0 platform** integrating **Post-Quantum Cryptography (PQC)**, 
 | Module | Core Features |
 | :--- | :--- |
 | **1. Quantum Portfolio Optimizer (QPO)** | Solves NP-hard portfolio allocation via Ising Hamiltonian & QUBO matrix. Dynamically incorporates geometric quantum risk penalty theta against classical ECDSA/EdDSA vulnerability. |
-| **2. AI Agentics Token Launchpad** | Deploy autonomous AI agent tokens with customizable bonding curves (Quantum Sigmoid, Exponential, Linear) and 1-click testnet deployment. |
+| **2. AI Agentics Token Launchpad** | Prototype UI for agent-token and bonding-curve configuration; no deployment is performed by the application helper. |
 | **3. Conway Quantum Automaton** | Interactive 2D cellular automaton with quantum superposition rules and AI agent genetic evolution. Surviving clusters trigger on-chain deflationary token burn vortexes. |
 | **4. Strategic Tokenomics Engine** | Infinite algorithmic elastic supply model ($QAGENT), viral multi-tier referral bonding tree, KOL quantum airdrop distributor, and institutional staking yields. |
-| **5. Multi-Model AI Chatbot** | Autonomous multi-model router switching between **Gemini 3.7 Flash**, **GPT-4o**, **Claude 3.5 Sonnet**, and **DeepSeek-R1** with active on-chain tool execution. |
-| **6. Web 4.0 Autonomous Mesh** | Cross-chain neural compute network with real-time telemetry, node load balancing (up to 3,200 TPS), and peer-to-peer agent negotiation protocols. |
+| **5. Multi-Model AI Chatbot** | Prototype router interface; provider availability and tool execution depend on separately configured services. |
+| **6. Web 4.0 Autonomous Mesh** | Interface and model for a cross-chain compute mesh; displayed telemetry is not independently verified network evidence. |
 | **7. Post-Quantum Cryptography Suite** | NIST FIPS 203/204 compliant ML-KEM-768/1024 lattice key encapsulation, ML-DSA-65 signatures, Shor's 127Q factorization simulator, and Q-Day doomsday countdown clock. |
-| **8. One-Click Dual Web3 Connect** | Simultaneously connects **MetaMask** (BNB Chain Testnet) and **Phantom / Solflare** (Solana Devnet) with dual balance synchronization and 1-click testnet gas faucets. |
+| **8. One-Click Dual Web3 Connect** | Wallet-interface prototype; no testnet balance, faucet, or transaction claim is made without live provider evidence. |
 
 ---
 
@@ -68,8 +74,8 @@ Where $V_i$ represents NIST quantum vulnerability index ($1.0$ for classical ECD
 git clone https://github.com/elon00/quantum-ai.git
 cd quantum-ai
 
-# Install dependencies
-npm install
+# Install the locked dependencies
+npm ci
 
 # Run the full-stack development server
 npm run dev
@@ -83,21 +89,15 @@ Open http://localhost:3000 in your browser.
 
 ---
 
-## ??? Deploying Smart Contracts
+## Verification
 
-### Deploy to BNB Smart Chain Testnet (Chain ID 97)
 ```bash
-cd contracts/bnb
-npm install
-npx hardhat run scripts/deploy_bnb_testnet.js --network bscTestnet
+npm test
+npm run lint
+npm run build
 ```
 
-### Deploy to Solana Devnet
-```bash
-cd contracts/solana
-npm install
-npx ts-node scripts/deploy_solana_devnet.ts
-```
+No deployment command is supplied as a readiness claim. Any future testnet or mainnet action must have its own reviewed configuration, signer policy, authorization checks, and commit-bound evidence.
 
 ---
 
