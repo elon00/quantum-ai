@@ -11,17 +11,19 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
     "audit:math": "node scripts/audit_math_algorithms.cjs",
-    "test:nist": "tsx tests/nist-pqc.test.mjs",
+    "test:nist": "node --import tsx tests/nist-pqc.test.mjs",
+    "test:deployment-boundary": "node --import tsx --test tests/solana-deployment-boundary.test.ts",
     "audit:crypto": "node scripts/audit-crypto.mjs",
-    "reality:universal": "tsx scripts/reality-universal.ts",
+    "reality:universal": "node --import tsx scripts/reality-universal.ts",
     "reality:certify": "tsx scripts/generate-urs-certificate.ts",
-    "test": "npm run audit:math && npm run test:nist && npm run audit:crypto && npm run reality:universal"
+    "test": "npm run audit:math && npm run test:nist && npm run test:deployment-boundary && npm run audit:crypto && npm run reality:universal"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
     "@noble/curves": "^1.8.1",
     "@noble/hashes": "^1.7.1",
-    "@noble/post-quantum": "^0.2.1",
+    "@noble/post-quantum": "0.7.1",
+    "@solana/web3.js": "1.98.4",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "canvas-confetti": "^1.9.4",
