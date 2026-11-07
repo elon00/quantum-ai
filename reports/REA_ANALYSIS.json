@@ -1,0 +1,476 @@
+{
+  "engine": "REA_Reverse_Engineer_Anything",
+  "status": "STRUCTURE_RECONSTRUCTED",
+  "analyzed_files": 156,
+  "manifest": {
+    "ARCHITECTURE_BOOK.md": {
+      "bytes": 2503
+    },
+    "bun.lock": {
+      "bytes": 73883
+    },
+    "Cargo.lock": {
+      "bytes": 161
+    },
+    "Cargo.toml": {
+      "bytes": 87
+    },
+    "index.html": {
+      "bytes": 688
+    },
+    "mcp.json": {
+      "bytes": 1040
+    },
+    "metadata.json": {
+      "bytes": 387
+    },
+    "netlify.toml": {
+      "bytes": 388
+    },
+    "package-lock.json": {
+      "bytes": 179166
+    },
+    "package.json": {
+      "bytes": 1792
+    },
+    "README.md": {
+      "bytes": 1972
+    },
+    "REALITY_MANIFEST.json": {
+      "bytes": 1415
+    },
+    "server.ts": {
+      "bytes": 5486
+    },
+    "tsconfig.json": {
+      "bytes": 534
+    },
+    "vite.config.ts": {
+      "bytes": 730
+    },
+    "WHITEPAPER.md": {
+      "bytes": 3360
+    },
+    "contracts\\deployment_proofs.json": {
+      "bytes": 1971
+    },
+    "contracts\\LaunchpadToken.sol": {
+      "bytes": 2338
+    },
+    "qpo_engine\\crypto_majors": {
+      "bytes": 0
+    },
+    "qpo_engine\\pqpo_master_engine.py": {
+      "bytes": 19208
+    },
+    "qpo_engine\\README.md": {
+      "bytes": 11916
+    },
+    "qpo_engine\\requirements.txt": {
+      "bytes": 203
+    },
+    "qpo_engine\\server.py": {
+      "bytes": 2174
+    },
+    "reality\\URS_EVIDENCE_CERTIFICATE.json": {
+      "bytes": 11591
+    },
+    "reality\\URS_EVIDENCE_CERTIFICATE.md": {
+      "bytes": 2421
+    },
+    "reality\\URS_SCORECARD.json": {
+      "bytes": 2484
+    },
+    "scripts\\audit-crypto.mjs": {
+      "bytes": 7196
+    },
+    "scripts\\audit_math_algorithms.cjs": {
+      "bytes": 8513
+    },
+    "scripts\\check-env.mjs": {
+      "bytes": 314
+    },
+    "scripts\\check-truth.mjs": {
+      "bytes": 537
+    },
+    "scripts\\deploy_all_testnets.cjs": {
+      "bytes": 7676
+    },
+    "scripts\\generate-urs-certificate.ts": {
+      "bytes": 6532
+    },
+    "scripts\\reality-universal.ts": {
+      "bytes": 16354
+    },
+    "scripts\\rea_inspector.py": {
+      "bytes": 1485
+    },
+    "scripts\\rsi_engine.py": {
+      "bytes": 2039
+    },
+    "src\\App.tsx": {
+      "bytes": 4441
+    },
+    "src\\index.css": {
+      "bytes": 856
+    },
+    "src\\main.rs": {
+      "bytes": 919
+    },
+    "src\\main.tsx": {
+      "bytes": 241
+    },
+    "src\\types.ts": {
+      "bytes": 5019
+    },
+    "tests\\nist-pqc.test.mjs": {
+      "bytes": 5327
+    },
+    "tests\\reality_check_harness.py": {
+      "bytes": 1989
+    },
+    "tests\\solana-deployment-boundary.test.ts": {
+      "bytes": 614
+    },
+    ".github\\workflows\\ci-cd-pipeline.yml": {
+      "bytes": 414
+    },
+    ".github\\workflows\\deploy.yml": {
+      "bytes": 1384
+    },
+    ".github\\workflows\\qmoosa-rsi-rea-sync.yml": {
+      "bytes": 531
+    },
+    ".github\\workflows\\quality.yml": {
+      "bytes": 454
+    },
+    "contracts\\bnb\\hardhat.config.js": {
+      "bytes": 413
+    },
+    "contracts\\bnb\\contracts\\QuantumAgenticToken.sol": {
+      "bytes": 8879
+    },
+    "contracts\\bnb\\contracts\\QuantumLaunchpad.sol": {
+      "bytes": 3534
+    },
+    "contracts\\bnb\\scripts\\deploy_bnb_testnet.js": {
+      "bytes": 1133
+    },
+    "contracts\\solana\\scripts\\deploy_solana_devnet.ts": {
+      "bytes": 750
+    },
+    "contracts\\solana\\programs\\quantum_agentic_launchpad\\src\\lib.rs": {
+      "bytes": 2361
+    },
+    "contracts\\sui\\sources\\quantum_sui.move": {
+      "bytes": 3065
+    },
+    "qpo_engine\\docs\\AUDIT.md": {
+      "bytes": 4525
+    },
+    "qpo_engine\\docs\\PROJECT_GUIDE.md": {
+      "bytes": 10221
+    },
+    "qpo_engine\\scripts\\run_crypto.py": {
+      "bytes": 15186
+    },
+    "qpo_engine\\scripts\\run_experiment.py": {
+      "bytes": 12316
+    },
+    "qpo_engine\\scripts\\submit_qpu.py": {
+      "bytes": 6559
+    },
+    "qpo_engine\\tests\\test_crypto.py": {
+      "bytes": 6223
+    },
+    "qpo_engine\\tests\\test_qubo.py": {
+      "bytes": 9034
+    },
+    "qpo_engine\\.github\\workflows\\ci.yml": {
+      "bytes": 736
+    },
+    "qpo_engine\\results\\crypto_majors\\optimal_strategy.csv": {
+      "bytes": 115
+    },
+    "qpo_engine\\results\\crypto_majors\\pqc_taxonomy.csv": {
+      "bytes": 618
+    },
+    "qpo_engine\\results\\crypto_majors\\prices_quantum_adjusted.csv": {
+      "bytes": 82228
+    },
+    "qpo_engine\\results\\crypto_majors\\prices_raw.csv": {
+      "bytes": 77615
+    },
+    "qpo_engine\\results\\crypto_majors\\quantum_aware_vs_blind.csv": {
+      "bytes": 230
+    },
+    "qpo_engine\\results\\crypto_majors\\solver_comparison.csv": {
+      "bytes": 571
+    },
+    "qpo_engine\\results\\crypto_majors\\summary.json": {
+      "bytes": 2998
+    },
+    "qpo_engine\\results\\crypto_mixed\\optimal_strategy.csv": {
+      "bytes": 115
+    },
+    "qpo_engine\\results\\crypto_mixed\\pqc_taxonomy.csv": {
+      "bytes": 947
+    },
+    "qpo_engine\\results\\crypto_mixed\\prices_quantum_adjusted.csv": {
+      "bytes": 84001
+    },
+    "qpo_engine\\results\\crypto_mixed\\prices_raw.csv": {
+      "bytes": 78600
+    },
+    "qpo_engine\\results\\crypto_mixed\\quantum_aware_vs_blind.csv": {
+      "bytes": 247
+    },
+    "qpo_engine\\results\\crypto_mixed\\solver_comparison.csv": {
+      "bytes": 591
+    },
+    "qpo_engine\\results\\crypto_mixed\\summary.json": {
+      "bytes": 4577
+    },
+    "qpo_engine\\results\\crypto_mixed\\theta_sweep.csv": {
+      "bytes": 717
+    },
+    "qpo_engine\\results\\crypto_pqc\\optimal_strategy.csv": {
+      "bytes": 117
+    },
+    "qpo_engine\\results\\crypto_pqc\\pqc_taxonomy.csv": {
+      "bytes": 990
+    },
+    "qpo_engine\\results\\crypto_pqc\\prices_quantum_adjusted.csv": {
+      "bytes": 87025
+    },
+    "qpo_engine\\results\\crypto_pqc\\prices_raw.csv": {
+      "bytes": 86122
+    },
+    "qpo_engine\\results\\crypto_pqc\\quantum_aware_vs_blind.csv": {
+      "bytes": 262
+    },
+    "qpo_engine\\results\\crypto_pqc\\solver_comparison.csv": {
+      "bytes": 591
+    },
+    "qpo_engine\\results\\crypto_pqc\\summary.json": {
+      "bytes": 3056
+    },
+    "qpo_engine\\results\\ibex\\optimal_strategy.csv": {
+      "bytes": 98
+    },
+    "qpo_engine\\results\\ibex\\prices.csv": {
+      "bytes": 15433
+    },
+    "qpo_engine\\results\\ibex\\scaling.csv": {
+      "bytes": 595
+    },
+    "qpo_engine\\results\\ibex\\solver_comparison.csv": {
+      "bytes": 535
+    },
+    "qpo_engine\\results\\ibex\\submission_payload.json": {
+      "bytes": 1243
+    },
+    "qpo_engine\\results\\ibex\\summary.json": {
+      "bytes": 4335
+    },
+    "qpo_engine\\results\\nifty\\optimal_strategy.csv": {
+      "bytes": 105
+    },
+    "qpo_engine\\results\\nifty\\prices.csv": {
+      "bytes": 49533
+    },
+    "qpo_engine\\results\\nifty\\scaling.csv": {
+      "bytes": 604
+    },
+    "qpo_engine\\results\\nifty\\solver_comparison.csv": {
+      "bytes": 541
+    },
+    "qpo_engine\\results\\nifty\\summary.json": {
+      "bytes": 4421
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\01_prices.png": {
+      "bytes": 214739
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\02_cost_distributions.png": {
+      "bytes": 102115
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\03_convergence.png": {
+      "bytes": 38301
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\04_strategy.png": {
+      "bytes": 52520
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\05_risk_return.png": {
+      "bytes": 149633
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\06_qubo_matrix.png": {
+      "bytes": 33803
+    },
+    "qpo_engine\\results\\crypto_majors\\figures\\08_pqc_exposure.png": {
+      "bytes": 64317
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\01_prices.png": {
+      "bytes": 158117
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\02_cost_distributions.png": {
+      "bytes": 103461
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\03_convergence.png": {
+      "bytes": 38535
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\04_strategy.png": {
+      "bytes": 50815
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\05_risk_return.png": {
+      "bytes": 132591
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\06_qubo_matrix.png": {
+      "bytes": 33616
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\08_pqc_exposure.png": {
+      "bytes": 68579
+    },
+    "qpo_engine\\results\\crypto_mixed\\figures\\09_quantum_frontier.png": {
+      "bytes": 93051
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\01_prices.png": {
+      "bytes": 142960
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\02_cost_distributions.png": {
+      "bytes": 108814
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\03_convergence.png": {
+      "bytes": 38190
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\04_strategy.png": {
+      "bytes": 52779
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\05_risk_return.png": {
+      "bytes": 135750
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\06_qubo_matrix.png": {
+      "bytes": 33898
+    },
+    "qpo_engine\\results\\crypto_pqc\\figures\\08_pqc_exposure.png": {
+      "bytes": 65332
+    },
+    "qpo_engine\\results\\ibex\\figures\\01_prices.png": {
+      "bytes": 148770
+    },
+    "qpo_engine\\results\\ibex\\figures\\02_cost_distributions.png": {
+      "bytes": 108727
+    },
+    "qpo_engine\\results\\ibex\\figures\\03_convergence.png": {
+      "bytes": 33847
+    },
+    "qpo_engine\\results\\ibex\\figures\\04_strategy.png": {
+      "bytes": 43883
+    },
+    "qpo_engine\\results\\ibex\\figures\\05_risk_return.png": {
+      "bytes": 105350
+    },
+    "qpo_engine\\results\\ibex\\figures\\06_qubo_matrix.png": {
+      "bytes": 33416
+    },
+    "qpo_engine\\results\\ibex\\figures\\07_scaling.png": {
+      "bytes": 61758
+    },
+    "qpo_engine\\results\\nifty\\figures\\01_prices.png": {
+      "bytes": 177949
+    },
+    "qpo_engine\\results\\nifty\\figures\\02_cost_distributions.png": {
+      "bytes": 111667
+    },
+    "qpo_engine\\results\\nifty\\figures\\03_convergence.png": {
+      "bytes": 37542
+    },
+    "qpo_engine\\results\\nifty\\figures\\04_strategy.png": {
+      "bytes": 47222
+    },
+    "qpo_engine\\results\\nifty\\figures\\05_risk_return.png": {
+      "bytes": 112202
+    },
+    "qpo_engine\\results\\nifty\\figures\\06_qubo_matrix.png": {
+      "bytes": 34220
+    },
+    "qpo_engine\\results\\nifty\\figures\\07_scaling.png": {
+      "bytes": 62358
+    },
+    "qpo_engine\\src\\qpo\\crypto.py": {
+      "bytes": 11392
+    },
+    "qpo_engine\\src\\qpo\\data.py": {
+      "bytes": 6672
+    },
+    "qpo_engine\\src\\qpo\\ibm_runner.py": {
+      "bytes": 9591
+    },
+    "qpo_engine\\src\\qpo\\plots.py": {
+      "bytes": 11496
+    },
+    "qpo_engine\\src\\qpo\\qubo.py": {
+      "bytes": 16658
+    },
+    "qpo_engine\\src\\qpo\\solvers.py": {
+      "bytes": 12759
+    },
+    "qpo_engine\\src\\qpo\\__init__.py": {
+      "bytes": 1543
+    },
+    "src\\components\\ConwayQuantumAutomaton.tsx": {
+      "bytes": 22436
+    },
+    "src\\components\\CrossChainQuantumBridge.tsx": {
+      "bytes": 10855
+    },
+    "src\\components\\DualWalletModal.tsx": {
+      "bytes": 8081
+    },
+    "src\\components\\GlobalTokenomicsDashboard.tsx": {
+      "bytes": 19454
+    },
+    "src\\components\\Header.tsx": {
+      "bytes": 9344
+    },
+    "src\\components\\HistoricalBacktester.tsx": {
+      "bytes": 8601
+    },
+    "src\\components\\LaunchWizardModal.tsx": {
+      "bytes": 13813
+    },
+    "src\\components\\MultiModelChatbot.tsx": {
+      "bytes": 12289
+    },
+    "src\\components\\PqcCryptoSuite.tsx": {
+      "bytes": 12985
+    },
+    "src\\components\\QuantumHardwareCloud.tsx": {
+      "bytes": 10600
+    },
+    "src\\components\\QuantumPortfolioOptimizer.tsx": {
+      "bytes": 21900
+    },
+    "src\\components\\SmartContractsExplorer.tsx": {
+      "bytes": 9177
+    },
+    "src\\components\\TokenLaunchpad.tsx": {
+      "bytes": 21061
+    },
+    "src\\components\\Web4AutonomousMesh.tsx": {
+      "bytes": 10527
+    },
+    "src\\context\\WalletContext.tsx": {
+      "bytes": 10170
+    },
+    "src\\data\\contractsData.ts": {
+      "bytes": 12263
+    },
+    "src\\utils\\pqcCrypto.ts": {
+      "bytes": 8295
+    },
+    "src\\utils\\quantumMath.ts": {
+      "bytes": 12868
+    }
+  },
+  "timestamp": 1794028162
+}
