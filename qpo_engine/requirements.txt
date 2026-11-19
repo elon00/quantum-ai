@@ -9,4 +9,4 @@ yfinance>=0.2.40
 
 # Quantum
 qiskit>=1.2
-qiskit-ibm-catalog>=0.2      # Qiskit Functions client (QPU submission only)
+qiskit-ibm-catalog>=0.22.0      # Qiskit Functions client (QPU submission only)
