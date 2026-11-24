@@ -30,8 +30,3 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
-
-target/
-*.exe
-*.pdb
-__pycache__/
